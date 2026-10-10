@@ -1,0 +1,12 @@
+diff --git a/src/miniurl/shorten.py b/src/miniurl/shorten.py
+--- a/src/miniurl/shorten.py
++++ b/src/miniurl/shorten.py
+@@ -27,7 +27,7 @@
+ 
+ def shorten(url: str, store) -> str:
+     """存下长链接，返回短码。"""
+-    if not url.startswith(("http://", "https://")):
++    if not url.startswith(("http://", "https://", "ftp://")):
+         raise ValueError("only http(s) urls are supported")
+     item_id = store.add(url)
+     return encode(item_id)

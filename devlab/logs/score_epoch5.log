@@ -1,0 +1,23 @@
+样本 10 条
+加载 out/run3/checkpoint_latest ...
+
+id                           files   churn 路由           P(merge) 规模       
+------------------------------------------------------------------------------
+03_tests_only                    1   +5/-0 normal          0.405 large    
+08_huge_feature                  2 +445/-0 normal          0.440 moderate 
+02_readme_only                   1   +1/-1 normal          0.485 moderate 
+10_dependency_bump               2   +3/-1 normal          0.503 small    
+06_rename_across_10_files       10  +62/-5 normal          0.506 moderate 
+01_typo_in_docstring             1   +1/-1 normal          0.514 large    
+05_bugfix_with_test              2  +15/-1 normal          0.523 small    
+09_small_src_no_test             1   +1/-1 normal          0.524 moderate 
+07_ci_and_pyproject              2   +4/-2 block           0.536 moderate 
+04_new_feature_no_tests          2  +30/-0 normal          0.618 moderate 
+
+--- 汇总 ---
+  延迟：p50 73.3ms / p95 158.2ms / 均值 102.6ms（模型加载 3.5s）
+  路由分布：{'normal': 9, 'block': 1}
+  P(merge) 均值 0.506，中位 0.510
+  与规则策略一致：路由 3/10（30.0%），规模 2/10（20.0%）
+
+逐条结果 → out\run3\batch_devlab_epoch5.jsonl

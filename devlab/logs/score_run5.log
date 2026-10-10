@@ -1,0 +1,23 @@
+样本 10 条
+加载 out/run5/final ...
+
+id                           files   churn 路由           P(merge) 规模       
+------------------------------------------------------------------------------
+10_dependency_bump               2   +3/-1 normal          0.459 moderate 
+01_typo_in_docstring             1   +1/-1 block           0.487 large    
+03_tests_only                    1   +5/-0 fast_track      0.493 moderate 
+07_ci_and_pyproject              2   +4/-2 fast_track      0.500 moderate 
+08_huge_feature                  2 +445/-0 needs_tests     0.502 moderate 
+02_readme_only                   1   +1/-1 needs_tests     0.505 moderate 
+05_bugfix_with_test              2  +15/-1 fast_track      0.514 moderate 
+04_new_feature_no_tests          2  +30/-0 needs_tests     0.514 moderate 
+06_rename_across_10_files       10  +62/-5 needs_tests     0.515 moderate 
+09_small_src_no_test             1   +1/-1 normal          0.559 moderate 
+
+--- 汇总 ---
+  延迟：p50 75.6ms / p95 169.1ms / 均值 105.7ms（模型加载 3.32s）
+  路由分布：{'block': 1, 'needs_tests': 4, 'fast_track': 3, 'normal': 2}
+  P(merge) 均值 0.505，中位 0.504
+  与规则策略一致：路由 4/10（40.0%），规模 1/10（10.0%）
+
+逐条结果 → out\run5\batch_devlab.jsonl

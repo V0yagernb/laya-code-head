@@ -1,0 +1,33 @@
+# ---- 权重与大数据（体积大，一律不入库）----
+*.safetensors
+*.bin
+*.pt
+*.ckpt
+models/
+out/
+wheels/
+
+# data/ 下直接堆放的大文件不入库；sample/ 与 ds5/ 是刻意保留的小体积样本
+data/*.jsonl
+data/*.pt
+
+# ---- 凭据（绝对不入库）----
+.secrets/
+.env
+*.env
+*_token.txt
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+
+# ---- 编辑器 / 系统 ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.tmp

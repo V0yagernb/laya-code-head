@@ -1,0 +1,12 @@
+diff --git a/src/miniurl/shorten.py b/src/miniurl/shorten.py
+--- a/src/miniurl/shorten.py
++++ b/src/miniurl/shorten.py
+@@ -5,7 +5,7 @@
+ 
+ 
+ def encode(num: int) -> str:
+-    """把自增 id 变成短码。"""
++    """把自增 id 变成短码（base62）。"""
+     if num < 0:
+         raise ValueError("id must be non-negative")
+     if num == 0:

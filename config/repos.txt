@@ -1,0 +1,67 @@
+# 每个 PR 的元数据只花 1 次 API 请求/100 条，diff 免费。
+# 有 token（5000 次/小时）可以全跑；未认证（60 次/小时）建议一次跑 2~4 个仓库。
+#
+# 选仓库原则：要有大量真实的人工 PR（不是机器人刷的），合并/关闭比例别过度倾斜。
+# 注意：留给测试集的仓库（encode/httpx）会从训练集里整体剔除，见 build_dataset --test-repos。
+#
+# ⚠️ 顺序有意义：清单从上往下挖。巨型单体仓库（cpython / kubernetes / TypeScript 这种）
+#    的 PR diff 动辄几百 KB，实测吞吐只有普通仓库的 1/3，所以全部排在最后 ——
+#    万一中途断了，先拿到的是性价比最高的那批。
+
+# ---- 中型仓库（吞吐最好，先挖这批）----
+psf/requests
+pallets/flask
+encode/httpx
+tiangolo/typer
+psf/black
+textualize/rich
+pydantic/pydantic
+fastapi/fastapi
+python-poetry/poetry
+aio-libs/aiohttp
+celery/celery
+sqlalchemy/sqlalchemy
+pytest-dev/pytest
+matplotlib/matplotlib
+gin-gonic/gin
+caddyserver/caddy
+expressjs/express
+vuejs/core
+sveltejs/svelte
+vitejs/vite
+rust-lang/regex
+tokio-rs/tokio
+redis/redis
+
+# ---- 第二批中型仓库（有 token 就一起挖，跨仓库泛化靠的就是这个）----
+pallets/click
+encode/starlette
+encode/uvicorn
+boto/boto3
+urllib3/urllib3
+python-attrs/attrs
+python/mypy
+dask/dask
+tqdm/tqdm
+tox-dev/tox
+PyCQA/flake8
+jazzband/pip-tools
+
+# ---- 大仓库（能挖，但每条 diff 更贵）----
+django/django
+scikit-learn/scikit-learn
+pandas-dev/pandas
+apache/airflow
+home-assistant/core
+
+# ---- 巨型单体（吞吐最低，放最后）----
+python/cpython
+golang/go
+microsoft/TypeScript
+vercel/next.js
+denoland/deno
+spring-projects/spring-boot
+hashicorp/terraform
+kubernetes/kubernetes
+elastic/elasticsearch
+nodejs/node

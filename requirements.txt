@@ -1,0 +1,12 @@
+# 训练环境依赖
+#
+# torch 不在这个文件里，因为要按 CUDA 版本指定 index-url。4060 Ti（sm_89）用 cu128：
+#   <venv>/Scripts/python.exe -m pip install torch --index-url https://download.pytorch.org/whl/cu128
+# CPU-only 机器用：
+#   <venv>/Scripts/python.exe -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+
+laya>=0.1.6
+transformers>=4.48.0
+huggingface_hub>=0.30.0
+safetensors>=0.4.0
+numpy>=1.26

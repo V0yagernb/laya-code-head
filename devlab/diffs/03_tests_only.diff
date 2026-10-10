@@ -1,0 +1,12 @@
+diff --git a/tests/test_shorten.py b/tests/test_shorten.py
+--- a/tests/test_shorten.py
++++ b/tests/test_shorten.py
+@@ -22,3 +22,8 @@
+     store = MemoryStore()
+     assert store.add("https://a.example") == store.add("https://a.example")
+     assert len(store) == 1
++
++
++def test_decode_rejects_unknown_char():
++    with pytest.raises(ValueError):
++        decode("!!")

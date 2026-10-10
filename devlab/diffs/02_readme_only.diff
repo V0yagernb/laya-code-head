@@ -1,0 +1,11 @@
+diff --git a/README.md b/README.md
+--- a/README.md
++++ b/README.md
+@@ -1,6 +1,6 @@
+ # miniurl
+ 
+-A tiny URL shortener used as a playground for review-risk scoring.
++A tiny URL shortener. Used as a playground for automated review-risk scoring.
+ 
+ ## Usage
+ 

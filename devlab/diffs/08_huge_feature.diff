@@ -1,0 +1,460 @@
+diff --git a/src/miniurl/api.py b/src/miniurl/api.py
+--- a/src/miniurl/api.py
++++ b/src/miniurl/api.py
+@@ -3,6 +3,7 @@
+ import json
+ from http.server import BaseHTTPRequestHandler
+ 
++from .metrics import metric_0
+ from .shorten import expand, shorten
+ 
+ 
+diff --git a/src/miniurl/metrics.py b/src/miniurl/metrics.py
+new file mode 100644
+--- /dev/null
++++ b/src/miniurl/metrics.py
+@@ -0,0 +1,444 @@
++"""分析统计：把访问记录聚合成报表。"""
++
++from collections import Counter
++
++
++def metric_0(rows):
++    """第 0 个统计口径。"""
++    counter = Counter(
++        r.get("field_0") for r in rows if r.get(f"enabled_0", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_1(rows):
++    """第 1 个统计口径。"""
++    counter = Counter(
++        r.get("field_1") for r in rows if r.get(f"enabled_1", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_2(rows):
++    """第 2 个统计口径。"""
++    counter = Counter(
++        r.get("field_2") for r in rows if r.get(f"enabled_2", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_3(rows):
++    """第 3 个统计口径。"""
++    counter = Counter(
++        r.get("field_3") for r in rows if r.get(f"enabled_3", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_4(rows):
++    """第 4 个统计口径。"""
++    counter = Counter(
++        r.get("field_4") for r in rows if r.get(f"enabled_4", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_5(rows):
++    """第 5 个统计口径。"""
++    counter = Counter(
++        r.get("field_5") for r in rows if r.get(f"enabled_5", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_6(rows):
++    """第 6 个统计口径。"""
++    counter = Counter(
++        r.get("field_6") for r in rows if r.get(f"enabled_6", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_7(rows):
++    """第 7 个统计口径。"""
++    counter = Counter(
++        r.get("field_7") for r in rows if r.get(f"enabled_7", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_8(rows):
++    """第 8 个统计口径。"""
++    counter = Counter(
++        r.get("field_8") for r in rows if r.get(f"enabled_8", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_9(rows):
++    """第 9 个统计口径。"""
++    counter = Counter(
++        r.get("field_9") for r in rows if r.get(f"enabled_9", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_10(rows):
++    """第 10 个统计口径。"""
++    counter = Counter(
++        r.get("field_10") for r in rows if r.get(f"enabled_10", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_11(rows):
++    """第 11 个统计口径。"""
++    counter = Counter(
++        r.get("field_11") for r in rows if r.get(f"enabled_11", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_12(rows):
++    """第 12 个统计口径。"""
++    counter = Counter(
++        r.get("field_12") for r in rows if r.get(f"enabled_12", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_13(rows):
++    """第 13 个统计口径。"""
++    counter = Counter(
++        r.get("field_13") for r in rows if r.get(f"enabled_13", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_14(rows):
++    """第 14 个统计口径。"""
++    counter = Counter(
++        r.get("field_14") for r in rows if r.get(f"enabled_14", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_15(rows):
++    """第 15 个统计口径。"""
++    counter = Counter(
++        r.get("field_15") for r in rows if r.get(f"enabled_15", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_16(rows):
++    """第 16 个统计口径。"""
++    counter = Counter(
++        r.get("field_16") for r in rows if r.get(f"enabled_16", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_17(rows):
++    """第 17 个统计口径。"""
++    counter = Counter(
++        r.get("field_17") for r in rows if r.get(f"enabled_17", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_18(rows):
++    """第 18 个统计口径。"""
++    counter = Counter(
++        r.get("field_18") for r in rows if r.get(f"enabled_18", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_19(rows):
++    """第 19 个统计口径。"""
++    counter = Counter(
++        r.get("field_19") for r in rows if r.get(f"enabled_19", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_20(rows):
++    """第 20 个统计口径。"""
++    counter = Counter(
++        r.get("field_20") for r in rows if r.get(f"enabled_20", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_21(rows):
++    """第 21 个统计口径。"""
++    counter = Counter(
++        r.get("field_21") for r in rows if r.get(f"enabled_21", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_22(rows):
++    """第 22 个统计口径。"""
++    counter = Counter(
++        r.get("field_22") for r in rows if r.get(f"enabled_22", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_23(rows):
++    """第 23 个统计口径。"""
++    counter = Counter(
++        r.get("field_23") for r in rows if r.get(f"enabled_23", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_24(rows):
++    """第 24 个统计口径。"""
++    counter = Counter(
++        r.get("field_24") for r in rows if r.get(f"enabled_24", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_25(rows):
++    """第 25 个统计口径。"""
++    counter = Counter(
++        r.get("field_25") for r in rows if r.get(f"enabled_25", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_26(rows):
++    """第 26 个统计口径。"""
++    counter = Counter(
++        r.get("field_26") for r in rows if r.get(f"enabled_26", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_27(rows):
++    """第 27 个统计口径。"""
++    counter = Counter(
++        r.get("field_27") for r in rows if r.get(f"enabled_27", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_28(rows):
++    """第 28 个统计口径。"""
++    counter = Counter(
++        r.get("field_28") for r in rows if r.get(f"enabled_28", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_29(rows):
++    """第 29 个统计口径。"""
++    counter = Counter(
++        r.get("field_29") for r in rows if r.get(f"enabled_29", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_30(rows):
++    """第 30 个统计口径。"""
++    counter = Counter(
++        r.get("field_30") for r in rows if r.get(f"enabled_30", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_31(rows):
++    """第 31 个统计口径。"""
++    counter = Counter(
++        r.get("field_31") for r in rows if r.get(f"enabled_31", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_32(rows):
++    """第 32 个统计口径。"""
++    counter = Counter(
++        r.get("field_32") for r in rows if r.get(f"enabled_32", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_33(rows):
++    """第 33 个统计口径。"""
++    counter = Counter(
++        r.get("field_33") for r in rows if r.get(f"enabled_33", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_34(rows):
++    """第 34 个统计口径。"""
++    counter = Counter(
++        r.get("field_34") for r in rows if r.get(f"enabled_34", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_35(rows):
++    """第 35 个统计口径。"""
++    counter = Counter(
++        r.get("field_35") for r in rows if r.get(f"enabled_35", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_36(rows):
++    """第 36 个统计口径。"""
++    counter = Counter(
++        r.get("field_36") for r in rows if r.get(f"enabled_36", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_37(rows):
++    """第 37 个统计口径。"""
++    counter = Counter(
++        r.get("field_37") for r in rows if r.get(f"enabled_37", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_38(rows):
++    """第 38 个统计口径。"""
++    counter = Counter(
++        r.get("field_38") for r in rows if r.get(f"enabled_38", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_39(rows):
++    """第 39 个统计口径。"""
++    counter = Counter(
++        r.get("field_39") for r in rows if r.get(f"enabled_39", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_40(rows):
++    """第 40 个统计口径。"""
++    counter = Counter(
++        r.get("field_40") for r in rows if r.get(f"enabled_40", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_41(rows):
++    """第 41 个统计口径。"""
++    counter = Counter(
++        r.get("field_41") for r in rows if r.get(f"enabled_41", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_42(rows):
++    """第 42 个统计口径。"""
++    counter = Counter(
++        r.get("field_42") for r in rows if r.get(f"enabled_42", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_43(rows):
++    """第 43 个统计口径。"""
++    counter = Counter(
++        r.get("field_43") for r in rows if r.get(f"enabled_43", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_44(rows):
++    """第 44 个统计口径。"""
++    counter = Counter(
++        r.get("field_44") for r in rows if r.get(f"enabled_44", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_45(rows):
++    """第 45 个统计口径。"""
++    counter = Counter(
++        r.get("field_45") for r in rows if r.get(f"enabled_45", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_46(rows):
++    """第 46 个统计口径。"""
++    counter = Counter(
++        r.get("field_46") for r in rows if r.get(f"enabled_46", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_47(rows):
++    """第 47 个统计口径。"""
++    counter = Counter(
++        r.get("field_47") for r in rows if r.get(f"enabled_47", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_48(rows):
++    """第 48 个统计口径。"""
++    counter = Counter(
++        r.get("field_48") for r in rows if r.get(f"enabled_48", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_49(rows):
++    """第 49 个统计口径。"""
++    counter = Counter(
++        r.get("field_49") for r in rows if r.get(f"enabled_49", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_50(rows):
++    """第 50 个统计口径。"""
++    counter = Counter(
++        r.get("field_50") for r in rows if r.get(f"enabled_50", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_51(rows):
++    """第 51 个统计口径。"""
++    counter = Counter(
++        r.get("field_51") for r in rows if r.get(f"enabled_51", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_52(rows):
++    """第 52 个统计口径。"""
++    counter = Counter(
++        r.get("field_52") for r in rows if r.get(f"enabled_52", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_53(rows):
++    """第 53 个统计口径。"""
++    counter = Counter(
++        r.get("field_53") for r in rows if r.get(f"enabled_53", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}
++
++def metric_54(rows):
++    """第 54 个统计口径。"""
++    counter = Counter(
++        r.get("field_54") for r in rows if r.get(f"enabled_54", True)
++    )
++    total = sum(counter.values()) or 1
++    return {k: v / total for k, v in counter.items()}

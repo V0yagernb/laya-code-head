@@ -1,0 +1,22 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -8,4 +8,6 @@
+       - uses: actions/setup-python@v5
+         with: { python-version: "3.12" }
+       - run: pip install -e ".[dev]"
+-      - run: pytest -q
++      - run: pip install -e ".[dev]"
++      - run: ruff check src tests
++      - run: pytest -q --cov=miniurl
+diff --git a/pyproject.toml b/pyproject.toml
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -1,6 +1,6 @@
+ [project]
+ name = "miniurl"
+-version = "0.3.1"
++version = "0.4.0"
+ requires-python = ">=3.10"
+ dependencies = ["httpx>=0.27"]
+ 

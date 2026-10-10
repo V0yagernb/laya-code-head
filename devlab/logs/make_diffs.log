@@ -1,0 +1,13 @@
+01_typo_in_docstring       files= 1 +1    -1    规则判定=normal
+02_readme_only             files= 1 +1    -1    规则判定=fast_track
+03_tests_only              files= 1 +5    -0    规则判定=fast_track
+04_new_feature_no_tests    files= 2 +30   -0    规则判定=needs_tests
+05_bugfix_with_test        files= 2 +15   -1    规则判定=fast_track
+06_rename_across_10_files  files=10 +62   -5    规则判定=block
+07_ci_and_pyproject        files= 2 +4    -2    规则判定=block
+08_huge_feature            files= 2 +445  -0    规则判定=block
+09_small_src_no_test       files= 1 +1    -1    规则判定=normal
+10_dependency_bump         files= 2 +3    -1    规则判定=block
+
+基线项目 → <WORKSPACE>\devlab\miniurl
+场景 diff → <WORKSPACE>\devlab\diffs（10 个）

@@ -1,0 +1,136 @@
+[
+  {
+    "scenario": "01_typo_in_docstring",
+    "note": "只改了一句 docstring，无行为变化",
+    "files": [
+      "src/miniurl/shorten.py"
+    ],
+    "changed_files": 1,
+    "additions": 1,
+    "deletions": 1,
+    "rule_route": "normal",
+    "rule_scale": "tiny"
+  },
+  {
+    "scenario": "02_readme_only",
+    "note": "文档改动，非代码文件",
+    "files": [
+      "README.md"
+    ],
+    "changed_files": 1,
+    "additions": 1,
+    "deletions": 1,
+    "rule_route": "fast_track",
+    "rule_scale": "tiny"
+  },
+  {
+    "scenario": "03_tests_only",
+    "note": "只加测试，没碰业务代码",
+    "files": [
+      "tests/test_shorten.py"
+    ],
+    "changed_files": 1,
+    "additions": 5,
+    "deletions": 0,
+    "rule_route": "fast_track",
+    "rule_scale": "tiny"
+  },
+  {
+    "scenario": "04_new_feature_no_tests",
+    "note": "新增限流模块并接进 HTTP 层，一行测试都没加",
+    "files": [
+      "src/miniurl/api.py",
+      "src/miniurl/ratelimit.py"
+    ],
+    "changed_files": 2,
+    "additions": 30,
+    "deletions": 0,
+    "rule_route": "needs_tests",
+    "rule_scale": "small"
+  },
+  {
+    "scenario": "05_bugfix_with_test",
+    "note": "修 bug 且补了回归测试",
+    "files": [
+      "src/miniurl/shorten.py",
+      "tests/test_shorten.py"
+    ],
+    "changed_files": 2,
+    "additions": 15,
+    "deletions": 1,
+    "rule_route": "fast_track",
+    "rule_scale": "small"
+  },
+  {
+    "scenario": "06_rename_across_10_files",
+    "note": "跨 10 个文件重命名 Store → Repository",
+    "files": [
+      "src/miniurl/__init__.py",
+      "src/miniurl/api.py",
+      "src/miniurl/plugins/p0.py",
+      "src/miniurl/plugins/p1.py",
+      "src/miniurl/plugins/p2.py",
+      "src/miniurl/plugins/p3.py",
+      "src/miniurl/plugins/p4.py",
+      "src/miniurl/plugins/p5.py",
+      "src/miniurl/plugins/p6.py",
+      "src/miniurl/store.py"
+    ],
+    "changed_files": 10,
+    "additions": 62,
+    "deletions": 5,
+    "rule_route": "block",
+    "rule_scale": "moderate"
+  },
+  {
+    "scenario": "07_ci_and_pyproject",
+    "note": "改 CI 流程和 pyproject（爆炸半径大）",
+    "files": [
+      ".github/workflows/ci.yml",
+      "pyproject.toml"
+    ],
+    "changed_files": 2,
+    "additions": 4,
+    "deletions": 2,
+    "rule_route": "block",
+    "rule_scale": "small"
+  },
+  {
+    "scenario": "08_huge_feature",
+    "note": "一次性加 500+ 行统计模块",
+    "files": [
+      "src/miniurl/api.py",
+      "src/miniurl/metrics.py"
+    ],
+    "changed_files": 2,
+    "additions": 445,
+    "deletions": 0,
+    "rule_route": "block",
+    "rule_scale": "large"
+  },
+  {
+    "scenario": "09_small_src_no_test",
+    "note": "放宽协议白名单，10 行以内，没加测试",
+    "files": [
+      "src/miniurl/shorten.py"
+    ],
+    "changed_files": 1,
+    "additions": 1,
+    "deletions": 1,
+    "rule_route": "normal",
+    "rule_scale": "tiny"
+  },
+  {
+    "scenario": "10_dependency_bump",
+    "note": "依赖版本升级（requirements 属于 critical 路径）",
+    "files": [
+      "pyproject.toml",
+      "requirements.txt"
+    ],
+    "changed_files": 2,
+    "additions": 3,
+    "deletions": 1,
+    "rule_route": "block",
+    "rule_scale": "tiny"
+  }
+]

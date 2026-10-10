@@ -1,0 +1,137 @@
+diff --git a/src/miniurl/__init__.py b/src/miniurl/__init__.py
+--- a/src/miniurl/__init__.py
++++ b/src/miniurl/__init__.py
+@@ -1,4 +1,4 @@
+ from .shorten import shorten, expand
+-from .store import MemoryStore
++from .store import MemoryRepository
+ 
+-__all__ = ["shorten", "expand", "MemoryStore"]
++__all__ = ["shorten", "expand", "MemoryRepository"]
+diff --git a/src/miniurl/api.py b/src/miniurl/api.py
+--- a/src/miniurl/api.py
++++ b/src/miniurl/api.py
+@@ -3,6 +3,7 @@
+ import json
+ from http.server import BaseHTTPRequestHandler
+ 
++from .store import Repository  # Store 已改名
+ from .shorten import expand, shorten
+ 
+ 
+diff --git a/src/miniurl/plugins/p0.py b/src/miniurl/plugins/p0.py
+new file mode 100644
+--- /dev/null
++++ b/src/miniurl/plugins/p0.py
+@@ -0,0 +1,8 @@
++"""插件 0：把 Store 换成 Repository 之后同步改名。"""
++
++from ..store import Repository
++
++
++class Plugin0(Repository):
++    def add(self, value: str) -> int:
++        return super().add(value.strip())
+diff --git a/src/miniurl/plugins/p1.py b/src/miniurl/plugins/p1.py
+new file mode 100644
+--- /dev/null
++++ b/src/miniurl/plugins/p1.py
+@@ -0,0 +1,8 @@
++"""插件 1：把 Store 换成 Repository 之后同步改名。"""
++
++from ..store import Repository
++
++
++class Plugin1(Repository):
++    def add(self, value: str) -> int:
++        return super().add(value.strip())
+diff --git a/src/miniurl/plugins/p2.py b/src/miniurl/plugins/p2.py
+new file mode 100644
+--- /dev/null
++++ b/src/miniurl/plugins/p2.py
+@@ -0,0 +1,8 @@
++"""插件 2：把 Store 换成 Repository 之后同步改名。"""
++
++from ..store import Repository
++
++
++class Plugin2(Repository):
++    def add(self, value: str) -> int:
++        return super().add(value.strip())
+diff --git a/src/miniurl/plugins/p3.py b/src/miniurl/plugins/p3.py
+new file mode 100644
+--- /dev/null
++++ b/src/miniurl/plugins/p3.py
+@@ -0,0 +1,8 @@
++"""插件 3：把 Store 换成 Repository 之后同步改名。"""
++
++from ..store import Repository
++
++
++class Plugin3(Repository):
++    def add(self, value: str) -> int:
++        return super().add(value.strip())
+diff --git a/src/miniurl/plugins/p4.py b/src/miniurl/plugins/p4.py
+new file mode 100644
+--- /dev/null
++++ b/src/miniurl/plugins/p4.py
+@@ -0,0 +1,8 @@
++"""插件 4：把 Store 换成 Repository 之后同步改名。"""
++
++from ..store import Repository
++
++
++class Plugin4(Repository):
++    def add(self, value: str) -> int:
++        return super().add(value.strip())
+diff --git a/src/miniurl/plugins/p5.py b/src/miniurl/plugins/p5.py
+new file mode 100644
+--- /dev/null
++++ b/src/miniurl/plugins/p5.py
+@@ -0,0 +1,8 @@
++"""插件 5：把 Store 换成 Repository 之后同步改名。"""
++
++from ..store import Repository
++
++
++class Plugin5(Repository):
++    def add(self, value: str) -> int:
++        return super().add(value.strip())
+diff --git a/src/miniurl/plugins/p6.py b/src/miniurl/plugins/p6.py
+new file mode 100644
+--- /dev/null
++++ b/src/miniurl/plugins/p6.py
+@@ -0,0 +1,8 @@
++"""插件 6：把 Store 换成 Repository 之后同步改名。"""
++
++from ..store import Repository
++
++
++class Plugin6(Repository):
++    def add(self, value: str) -> int:
++        return super().add(value.strip())
+diff --git a/src/miniurl/store.py b/src/miniurl/store.py
+--- a/src/miniurl/store.py
++++ b/src/miniurl/store.py
+@@ -1,10 +1,10 @@
+ """存储层：内存实现 + 一个抽象基类。
+ 
+-刻意做成两层：线上换成 Redis/SQLite 时只替换 Store 的实现，业务代码不动。
++刻意做成两层：线上换成 Redis/SQLite 时只替换 Repository 的实现，业务代码不动。
+ """
+ 
+ 
+-class Store:
++class Repository:
+     def add(self, value: str) -> int:
+         raise NotImplementedError
+ 
+@@ -12,7 +12,7 @@
+         raise NotImplementedError
+ 
+ 
+-class MemoryStore(Store):
++class MemoryRepository(Repository):
+     def __init__(self):
+         self._rows: list[str] = []
+         self._index: dict[str, int] = {}

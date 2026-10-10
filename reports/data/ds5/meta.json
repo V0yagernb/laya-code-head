@@ -1,0 +1,55 @@
+{
+  "raw": "data\\raw_snapshot.jsonl",
+  "model_id": "models/laya",
+  "max_len": 1024,
+  "head_max_len": 256,
+  "repos": [
+    "aio-libs/aiohttp",
+    "caddyserver/caddy",
+    "celery/celery",
+    "encode/httpx",
+    "expressjs/express",
+    "fastapi/fastapi",
+    "gin-gonic/gin",
+    "matplotlib/matplotlib",
+    "pallets/flask",
+    "pandas-dev/pandas",
+    "psf/black",
+    "psf/requests",
+    "pydantic/pydantic",
+    "pytest-dev/pytest",
+    "python-poetry/poetry",
+    "python/cpython",
+    "sqlalchemy/sqlalchemy",
+    "sveltejs/svelte",
+    "textualize/rich",
+    "tiangolo/typer",
+    "vitejs/vite",
+    "vuejs/core"
+  ],
+  "test_repos": [
+    "encode/httpx",
+    "python-poetry/poetry"
+  ],
+  "splits": {
+    "train": {
+      "cases": 2510,
+      "items": 10316
+    },
+    "dev": {
+      "cases": 327,
+      "items": 981
+    },
+    "calib": {
+      "cases": 327,
+      "items": 981
+    },
+    "test": {
+      "cases": 434,
+      "items": 1302
+    }
+  },
+  "balanced_train": true,
+  "balanced_routes": true,
+  "anonymize_repo": true
+}

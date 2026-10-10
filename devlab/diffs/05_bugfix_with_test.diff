@@ -1,0 +1,35 @@
+diff --git a/src/miniurl/shorten.py b/src/miniurl/shorten.py
+--- a/src/miniurl/shorten.py
++++ b/src/miniurl/shorten.py
+@@ -18,9 +18,13 @@
+ 
+ 
+ def decode(code: str) -> int:
+-    """短码还原成 id。"""
++    """短码还原成 id。非法字符要报错，而不是抛一个看不懂的 ValueError。"""
++    if not code:
++        raise ValueError("empty code")
+     num = 0
+     for ch in code:
++        if ch not in ALPHABET:
++            raise ValueError(f"illegal character in code: {ch!r}")
+         num = num * BASE + ALPHABET.index(ch)
+     return num
+ 
+diff --git a/tests/test_shorten.py b/tests/test_shorten.py
+--- a/tests/test_shorten.py
++++ b/tests/test_shorten.py
+@@ -22,3 +22,13 @@
+     store = MemoryStore()
+     assert store.add("https://a.example") == store.add("https://a.example")
+     assert len(store) == 1
++
++
++def test_decode_rejects_illegal_character():
++    with pytest.raises(ValueError, match="illegal character"):
++        decode("0!")
++
++
++def test_decode_rejects_empty():
++    with pytest.raises(ValueError, match="empty code"):
++        decode("")

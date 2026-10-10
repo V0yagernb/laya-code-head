@@ -1,0 +1,52 @@
+diff --git a/src/miniurl/api.py b/src/miniurl/api.py
+--- a/src/miniurl/api.py
++++ b/src/miniurl/api.py
+@@ -3,13 +3,18 @@
+ import json
+ from http.server import BaseHTTPRequestHandler
+ 
++from .ratelimit import RateLimiter, client_key
+ from .shorten import expand, shorten
+ 
+ 
+ class Handler(BaseHTTPRequestHandler):
+     store = None  # 由 create_server 注入
++    limiter = RateLimiter()
+ 
+     def do_POST(self):
++        if not self.limiter.allow(client_key(self)):
++            self._send(429, {"error": "rate limited"})
++            return
+         length = int(self.headers.get("Content-Length", 0))
+         payload = json.loads(self.rfile.read(length) or b"{}")
+         code = shorten(payload["url"], self.store)
+diff --git a/src/miniurl/ratelimit.py b/src/miniurl/ratelimit.py
+new file mode 100644
+--- /dev/null
++++ b/src/miniurl/ratelimit.py
+@@ -0,0 +1,25 @@
++"""按客户端限流（滑动窗口）。"""
++
++import time
++from collections import defaultdict, deque
++
++
++class RateLimiter:
++    def __init__(self, limit: int = 60, window: float = 60.0):
++        self.limit = limit
++        self.window = window
++        self._hits = defaultdict(deque)
++
++    def allow(self, client: str) -> bool:
++        now = time.monotonic()
++        hits = self._hits[client]
++        while hits and now - hits[0] > self.window:
++            hits.popleft()
++        if len(hits) >= self.limit:
++            return False
++        hits.append(now)
++        return True
++
++
++def client_key(handler) -> str:
++    return handler.client_address[0]
