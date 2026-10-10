@@ -1,0 +1,40 @@
+{
+  "split": "test",
+  "n_cases": 29,
+  "models": {
+    "out/run2/final": {
+      "will_merge": {
+        "n": 29,
+        "accuracy": 0.7586,
+        "brier": 0.2322,
+        "ece": 0.2774,
+        "base_rate": 0.2759,
+        "mean_answer_confidence": 0.8088
+      },
+      "review_route": {
+        "n": 29,
+        "accuracy": 0.3103,
+        "macro_f1": 0.2842,
+        "per_class_f1": {
+          "fast_track": 0.3846,
+          "normal": 0.2,
+          "needs_tests": 0.2857,
+          "block": 0.2667
+        },
+        "ece": 0.2388,
+        "majority_class": "block",
+        "majority_baseline": 0.3103,
+        "mean_answer_confidence": 0.4681
+      },
+      "change_scale": {
+        "n": 29,
+        "mae": 0.7482,
+        "accuracy_argmax": 0.4483,
+        "within_one_level": 0.8621,
+        "ece": 0.0829,
+        "mean_answer_confidence": 0.4535
+      },
+      "latency_ms_p50": 152.7
+    }
+  }
+}

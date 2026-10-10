@@ -1,0 +1,451 @@
+{
+  "run5": {
+    "desc": "完整训练 10316 项 / 10 轮 / lr 3e-4 / 混合（历史 run）",
+    "dataset": "data/ds5",
+    "series": [],
+    "eval": null
+  },
+  "iso_route": {
+    "desc": "route 全量 5296 / 3 轮 / lr 1e-4",
+    "dataset": "data/ds5_route",
+    "series": [
+      {
+        "epoch": 1,
+        "total": 3,
+        "avg_loss": 1.2663,
+        "dev": {
+          "choice_acc": 0.2232
+        }
+      },
+      {
+        "epoch": 2,
+        "total": 3,
+        "avg_loss": 1.2905,
+        "dev": {
+          "choice_acc": 0.2569
+        }
+      },
+      {
+        "epoch": 3,
+        "total": 3,
+        "avg_loss": 1.3133,
+        "dev": {
+          "choice_acc": 0.2355
+        }
+      }
+    ],
+    "eval": {
+      "review_route": {
+        "n": 5296,
+        "macro_f1": 0.39661094736881436,
+        "acc": 0.4104984894259819,
+        "per_class_f1": {
+          "fast_track": 0.3353404353867532,
+          "normal": 0.3166368515205724,
+          "needs_tests": 0.5073025335320417,
+          "block": 0.4271639690358902
+        },
+        "mean_max_prob": 0.29331116741832647
+      }
+    }
+  },
+  "iso_noul": {
+    "desc": "will_merge 全量 2510 / 3 轮 / lr 1e-4",
+    "dataset": "data/ds5_noul",
+    "series": [
+      {
+        "epoch": 1,
+        "total": 3,
+        "avg_loss": 0.6409,
+        "dev": {
+          "noul_auc": 0.5803
+        }
+      },
+      {
+        "epoch": 2,
+        "total": 3,
+        "avg_loss": 0.6654,
+        "dev": {
+          "noul_auc": 0.5872
+        }
+      },
+      {
+        "epoch": 3,
+        "total": 3,
+        "avg_loss": 0.6621,
+        "dev": {
+          "noul_auc": 0.5941
+        }
+      }
+    ],
+    "eval": {
+      "will_merge": {
+        "n": 2510,
+        "auc": 0.6396834970873478,
+        "acc": 0.5605577689243028,
+        "base_rate": 0.5
+      }
+    }
+  },
+  "iso_score": {
+    "desc": "change_scale 全量 2510 / 3 轮 / lr 1e-4",
+    "dataset": "data/ds5_score",
+    "series": [
+      {
+        "epoch": 1,
+        "total": 3,
+        "avg_loss": 1.4143,
+        "dev": {
+          "neg_score_mae": -0.8665
+        }
+      },
+      {
+        "epoch": 2,
+        "total": 3,
+        "avg_loss": 1.3901,
+        "dev": {
+          "neg_score_mae": -0.8441
+        }
+      },
+      {
+        "epoch": 3,
+        "total": 3,
+        "avg_loss": 1.3826,
+        "dev": {
+          "neg_score_mae": -0.8403
+        }
+      }
+    ],
+    "eval": {
+      "change_scale": {
+        "n": 2510,
+        "mae": 0.8447480486446168,
+        "acc_argmax": 0.3880478087649402
+      }
+    }
+  },
+  "eq_mixed": {
+    "desc": "混合 600 / 3 轮 / lr 1e-4",
+    "dataset": "data/ds5",
+    "series": [
+      {
+        "epoch": 1,
+        "total": 3,
+        "avg_loss": 1.2455,
+        "dev": {
+          "choice_acc": 0.3284,
+          "noul_auc": 0.5046,
+          "neg_score_mae": -0.9184
+        }
+      },
+      {
+        "epoch": 2,
+        "total": 3,
+        "avg_loss": 1.209,
+        "dev": {
+          "choice_acc": 0.3134,
+          "noul_auc": 0.494,
+          "neg_score_mae": -0.9121
+        }
+      },
+      {
+        "epoch": 3,
+        "total": 3,
+        "avg_loss": 1.2352,
+        "dev": {
+          "choice_acc": 0.3284,
+          "noul_auc": 0.5046,
+          "neg_score_mae": -0.9079
+        }
+      }
+    ],
+    "eval": {
+      "will_merge": {
+        "n": 146,
+        "auc": 0.5084697910784868,
+        "acc": 0.4726027397260274,
+        "base_rate": 0.4726027397260274
+      },
+      "review_route": {
+        "n": 308,
+        "macro_f1": 0.18195799204926993,
+        "acc": 0.21428571428571427,
+        "per_class_f1": {
+          "fast_track": 0.12068965517241378,
+          "normal": 0.2525252525252525,
+          "needs_tests": 0.28054298642533937,
+          "block": 0.07407407407407407
+        },
+        "mean_max_prob": 0.27339064252453965
+      },
+      "change_scale": {
+        "n": 146,
+        "mae": 0.9242946829085481,
+        "acc_argmax": 0.3287671232876712
+      }
+    }
+  },
+  "eq_route": {
+    "desc": "route 600 / 3 轮 / lr 1e-4",
+    "dataset": "data/ds5_route",
+    "series": [
+      {
+        "epoch": 1,
+        "total": 3,
+        "avg_loss": 1.3125,
+        "dev": {
+          "choice_acc": 0.245
+        }
+      },
+      {
+        "epoch": 2,
+        "total": 3,
+        "avg_loss": 1.3207,
+        "dev": {
+          "choice_acc": 0.265
+        }
+      },
+      {
+        "epoch": 3,
+        "total": 3,
+        "avg_loss": 1.3658,
+        "dev": {
+          "choice_acc": 0.255
+        }
+      }
+    ],
+    "eval": {
+      "review_route": {
+        "n": 600,
+        "macro_f1": 0.18699178141521441,
+        "acc": 0.22333333333333333,
+        "per_class_f1": {
+          "fast_track": 0.12560386473429952,
+          "normal": 0.24102564102564103,
+          "needs_tests": 0.3254716981132076,
+          "block": 0.0558659217877095
+        },
+        "mean_max_prob": 0.2700897045433521
+      }
+    }
+  },
+  "eq_route_1ep": {
+    "desc": "route 600 / 1 轮 / lr 1e-4",
+    "dataset": "data/ds5_route",
+    "series": [
+      {
+        "epoch": 1,
+        "total": 1,
+        "avg_loss": 1.332,
+        "dev": {
+          "choice_acc": 0.245
+        }
+      }
+    ],
+    "eval": null
+  },
+  "lr3b_mixed": {
+    "desc": "混合 600 / 3 轮 / lr 3e-4",
+    "dataset": "data/ds5",
+    "series": [
+      {
+        "epoch": 1,
+        "total": 3,
+        "avg_loss": 1.1942,
+        "train": {
+          "choice_acc": 0.2825,
+          "noul_auc": 0.5523
+        },
+        "dev": {
+          "choice_acc": 0.2239,
+          "noul_auc": 0.4693,
+          "neg_score_mae": -0.8526
+        }
+      },
+      {
+        "epoch": 2,
+        "total": 3,
+        "avg_loss": 1.2085,
+        "train": {
+          "choice_acc": 0.2955,
+          "noul_auc": 0.6168
+        },
+        "dev": {
+          "choice_acc": 0.2239,
+          "noul_auc": 0.4592,
+          "neg_score_mae": -0.9009
+        }
+      },
+      {
+        "epoch": 3,
+        "total": 3,
+        "avg_loss": 1.2253,
+        "train": {
+          "choice_acc": 0.2922,
+          "noul_auc": 0.6331
+        },
+        "dev": {
+          "choice_acc": 0.2537,
+          "noul_auc": 0.4693,
+          "neg_score_mae": -0.8906
+        }
+      }
+    ],
+    "eval": {
+      "review_route": {
+        "n": 5296,
+        "macro_f1": 0.20602205753269048,
+        "acc": 0.22790785498489427,
+        "per_class_f1": {
+          "fast_track": 0.2707168894289186,
+          "normal": 0.09274673008323425,
+          "needs_tests": 0.1790154152163103,
+          "block": 0.28160919540229884
+        },
+        "mean_max_prob": 0.25908759805258486
+      }
+    }
+  },
+  "lr3b_route": {
+    "desc": "route 全量 5296 / 3 轮 / lr 3e-4",
+    "dataset": "data/ds5_route",
+    "series": [
+      {
+        "epoch": 1,
+        "total": 3,
+        "avg_loss": 1.2641,
+        "train": {
+          "choice_acc": 0.251
+        },
+        "dev": {
+          "choice_acc": 0.1988
+        }
+      },
+      {
+        "epoch": 2,
+        "total": 3,
+        "avg_loss": 1.2992,
+        "train": {
+          "choice_acc": 0.3262
+        },
+        "dev": {
+          "choice_acc": 0.2569
+        }
+      },
+      {
+        "epoch": 3,
+        "total": 3,
+        "avg_loss": 1.3237,
+        "train": {
+          "choice_acc": 0.376
+        },
+        "dev": {
+          "choice_acc": 0.3578
+        }
+      }
+    ],
+    "eval": {
+      "review_route": {
+        "n": 5296,
+        "macro_f1": 0.3913747357211771,
+        "acc": 0.40049093655589124,
+        "per_class_f1": {
+          "fast_track": 0.39624005784526384,
+          "normal": 0.29018885306310455,
+          "needs_tests": 0.4924558587479936,
+          "block": 0.3866141732283464
+        },
+        "mean_max_prob": 0.306355737521119
+      }
+    }
+  },
+  "conv_route8": {
+    "desc": "route 全量 5296 / 8 轮 / lr 3e-4",
+    "dataset": "data/ds5_route",
+    "series": [
+      {
+        "epoch": 1,
+        "total": 8,
+        "avg_loss": 1.2644,
+        "train": {
+          "choice_acc": 0.2754
+        },
+        "dev": {
+          "choice_acc": 0.3028
+        }
+      },
+      {
+        "epoch": 2,
+        "total": 8,
+        "avg_loss": 1.2719,
+        "train": {
+          "choice_acc": 0.2666
+        },
+        "dev": {
+          "choice_acc": 0.2691
+        }
+      },
+      {
+        "epoch": 3,
+        "total": 8,
+        "avg_loss": 1.2859,
+        "train": {
+          "choice_acc": 0.2803
+        },
+        "dev": {
+          "choice_acc": 0.2844
+        }
+      }
+    ],
+    "eval": null
+  },
+  "gd_mixed_all": {
+    "desc": "混合 600 / 1 轮 / lr 1e-4（全反传）",
+    "dataset": "data/ds5",
+    "series": [
+      {
+        "epoch": 1,
+        "total": 1,
+        "avg_loss": 1.2582,
+        "dev": {
+          "choice_acc": 0.2985,
+          "noul_auc": 0.5114,
+          "neg_score_mae": -0.9395
+        }
+      }
+    ],
+    "eval": null
+  },
+  "gd_mixed_route": {
+    "desc": "混合 600 / 1 轮 / lr 1e-4（只反传 route）",
+    "dataset": "data/ds5",
+    "series": [
+      {
+        "epoch": 1,
+        "total": 1,
+        "avg_loss": 1.1783,
+        "dev": {
+          "choice_acc": 0.3134,
+          "noul_auc": 0.5064,
+          "neg_score_mae": -0.9482
+        }
+      }
+    ],
+    "eval": null
+  },
+  "gd_route_only": {
+    "desc": "route 600 / 1 轮 / lr 1e-4",
+    "dataset": "data/ds5_route",
+    "series": [
+      {
+        "epoch": 1,
+        "total": 1,
+        "avg_loss": 1.332,
+        "dev": {
+          "choice_acc": 0.245
+        }
+      }
+    ],
+    "eval": null
+  }
+}

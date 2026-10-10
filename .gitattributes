@@ -1,0 +1,9 @@
+# 统一换行符，避免 Windows 上提交时出现 CRLF 抖动
+* text=auto
+*.py    text eol=lf
+*.md    text eol=lf
+*.txt   text eol=lf
+*.json  text eol=lf
+*.jsonl text eol=lf
+*.diff  text eol=lf
+*.log   text eol=lf

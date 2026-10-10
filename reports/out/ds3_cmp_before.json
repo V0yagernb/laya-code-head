@@ -1,0 +1,82 @@
+{
+  "split": "test",
+  "n_cases": 434,
+  "models": {
+    "out/run2/final": {
+      "will_merge": {
+        "n": 434,
+        "accuracy": 0.5115,
+        "auc": 0.5413,
+        "best_threshold": 0.05,
+        "accuracy_at_best_threshold": 0.5783,
+        "brier": 0.3644,
+        "ece": 0.2858,
+        "base_rate": 0.606,
+        "majority_baseline": 0.606,
+        "mean_answer_confidence": 0.7947
+      },
+      "review_route": {
+        "n": 434,
+        "accuracy": 0.2857,
+        "macro_f1": 0.2542,
+        "per_class_f1": {
+          "fast_track": 0.3587,
+          "normal": 0.2624,
+          "needs_tests": 0.1587,
+          "block": 0.2371
+        },
+        "ece": 0.199,
+        "majority_class": "normal",
+        "majority_baseline": 0.4954,
+        "mean_answer_confidence": 0.4847
+      },
+      "change_scale": {
+        "n": 434,
+        "mae": 0.7958,
+        "accuracy_argmax": 0.3825,
+        "within_one_level": 0.871,
+        "ece": 0.0866,
+        "mean_answer_confidence": 0.4237
+      },
+      "latency_ms_p50": 382.1
+    },
+    "models/laya": {
+      "will_merge": {
+        "n": 434,
+        "accuracy": 0.5829,
+        "auc": 0.4171,
+        "best_threshold": 0.05,
+        "accuracy_at_best_threshold": 0.606,
+        "brier": 0.26,
+        "ece": 0.0872,
+        "base_rate": 0.606,
+        "majority_baseline": 0.606,
+        "mean_answer_confidence": 0.6493
+      },
+      "review_route": {
+        "n": 434,
+        "accuracy": 0.2235,
+        "macro_f1": 0.1599,
+        "per_class_f1": {
+          "fast_track": 0.1356,
+          "normal": 0.4085,
+          "needs_tests": 0.0574,
+          "block": 0.0381
+        },
+        "ece": 0.138,
+        "majority_class": "normal",
+        "majority_baseline": 0.4954,
+        "mean_answer_confidence": 0.3615
+      },
+      "change_scale": {
+        "n": 434,
+        "mae": 0.9069,
+        "accuracy_argmax": 0.3387,
+        "within_one_level": 0.7972,
+        "ece": 0.1309,
+        "mean_answer_confidence": 0.4665
+      },
+      "latency_ms_p50": 211.6
+    }
+  }
+}

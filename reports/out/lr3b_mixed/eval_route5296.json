@@ -1,0 +1,19 @@
+{
+  "ckpt": "out/lr3b_mixed/final",
+  "split": "train",
+  "n_items": 5296,
+  "report": {
+    "review_route": {
+      "n": 5296,
+      "macro_f1": 0.20602205753269048,
+      "acc": 0.22790785498489427,
+      "per_class_f1": {
+        "fast_track": 0.2707168894289186,
+        "normal": 0.09274673008323425,
+        "needs_tests": 0.1790154152163103,
+        "block": 0.28160919540229884
+      },
+      "mean_max_prob": 0.25908759805258486
+    }
+  }
+}

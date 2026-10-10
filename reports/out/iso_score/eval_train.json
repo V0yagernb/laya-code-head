@@ -1,0 +1,12 @@
+{
+  "ckpt": "out/iso_score/final",
+  "split": "train",
+  "n_items": 2510,
+  "report": {
+    "change_scale": {
+      "n": 2510,
+      "mae": 0.8447480486446168,
+      "acc_argmax": 0.3880478087649402
+    }
+  }
+}

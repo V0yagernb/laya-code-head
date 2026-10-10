@@ -1,0 +1,19 @@
+{
+  "ckpt": "out/gd_route_only/final",
+  "split": "train",
+  "n_items": 600,
+  "report": {
+    "review_route": {
+      "n": 600,
+      "macro_f1": 0.18548777740115643,
+      "acc": 0.22833333333333333,
+      "per_class_f1": {
+        "fast_track": 0.10256410256410256,
+        "normal": 0.24352331606217617,
+        "needs_tests": 0.3393665158371041,
+        "block": 0.05649717514124293
+      },
+      "mean_max_prob": 0.34188783595959343
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "prior_train": {
+    "fast_track": 0.25,
+    "normal": 0.25,
+    "needs_tests": 0.25,
+    "block": 0.25
+  },
+  "prior_train_counts": {
+    "fast_track": 1324,
+    "normal": 1324,
+    "needs_tests": 1324,
+    "block": 1324
+  },
+  "prior_target": {
+    "fast_track": 0.23732718894009217,
+    "normal": 0.49539170506912444,
+    "needs_tests": 0.052995391705069124,
+    "block": 0.21428571428571427
+  },
+  "raw": {
+    "name": "① 原样 argmax（run5 现在报的口径）",
+    "macro_f1": 0.18520450353004309,
+    "accuracy": 0.20046082949308755,
+    "mean_max_prob": 0.25732350230414747,
+    "per_class_f1": {
+      "fast_track": 0.22399999999999998,
+      "normal": 0.21582733812949637,
+      "needs_tests": 0.060606060606060615,
+      "block": 0.2403846153846154
+    },
+    "pred_dist": {
+      "fast_track": 147,
+      "block": 115,
+      "needs_tests": 109,
+      "normal": 63
+    }
+  },
+  "reweighted": {
+    "name": "② 先验还原后 argmax（M4 要做的事）",
+    "macro_f1": 0.16563944530046223,
+    "accuracy": 0.49539170506912444,
+    "mean_max_prob": 0.4918203635201697,
+    "per_class_f1": {
+      "fast_track": 0.0,
+      "normal": 0.6625577812018489,
+      "needs_tests": 0.0,
+      "block": 0.0
+    },
+    "pred_dist": {
+      "normal": 434
+    }
+  },
+  "rule_upper_bound": {
+    "name": "③ 上界参考：直接照规则策略答（不是模型成绩）",
+    "macro_f1": 1.0,
+    "accuracy": 1.0,
+    "mean_max_prob": 1.0,
+    "per_class_f1": {
+      "fast_track": 1.0,
+      "normal": 1.0,
+      "needs_tests": 1.0,
+      "block": 1.0
+    },
+    "pred_dist": {
+      "fast_track": 103,
+      "block": 93,
+      "normal": 215,
+      "needs_tests": 23
+    }
+  },
+  "correct_rank_dist": {
+    "0": 87,
+    "1": 133,
+    "2": 105,
+    "3": 109
+  },
+  "mean_true_prob": 0.2500610599078341,
+  "gain": -0.01956505822958085
+}

@@ -1,0 +1,19 @@
+{
+  "ckpt": "out/eq_route/final",
+  "split": "train",
+  "n_items": 600,
+  "report": {
+    "review_route": {
+      "n": 600,
+      "macro_f1": 0.18699178141521441,
+      "acc": 0.22333333333333333,
+      "per_class_f1": {
+        "fast_track": 0.12560386473429952,
+        "normal": 0.24102564102564103,
+        "needs_tests": 0.3254716981132076,
+        "block": 0.0558659217877095
+      },
+      "mean_max_prob": 0.2700897045433521
+    }
+  }
+}

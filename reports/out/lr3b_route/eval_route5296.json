@@ -1,0 +1,19 @@
+{
+  "ckpt": "out/lr3b_route/final",
+  "split": "train",
+  "n_items": 5296,
+  "report": {
+    "review_route": {
+      "n": 5296,
+      "macro_f1": 0.3913747357211771,
+      "acc": 0.40049093655589124,
+      "per_class_f1": {
+        "fast_track": 0.39624005784526384,
+        "normal": 0.29018885306310455,
+        "needs_tests": 0.4924558587479936,
+        "block": 0.3866141732283464
+      },
+      "mean_max_prob": 0.306355737521119
+    }
+  }
+}

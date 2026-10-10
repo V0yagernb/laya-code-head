@@ -1,15 +1,16 @@
 # ---- 权重与大数据（体积大，一律不入库）----
+# 注意：全部用前导 / 锚定到仓库根，否则会把 reports/out/** 这类证据目录一起吞掉
 *.safetensors
 *.bin
 *.pt
 *.ckpt
-models/
-out/
-wheels/
+/models/
+/out/
+/wheels/
 
 # data/ 下直接堆放的大文件不入库；sample/ 与 ds5/ 是刻意保留的小体积样本
-data/*.jsonl
-data/*.pt
+/data/*.jsonl
+/data/*.pt
 
 # ---- 凭据（绝对不入库）----
 .secrets/

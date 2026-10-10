@@ -1,0 +1,13 @@
+{
+  "ckpt": "out/iso_noul/final",
+  "split": "train",
+  "n_items": 2510,
+  "report": {
+    "will_merge": {
+      "n": 2510,
+      "auc": 0.6396834970873478,
+      "acc": 0.5605577689243028,
+      "base_rate": 0.5
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "split": "test",
+  "n_cases": 29,
+  "models": {
+    "out/run1/final": {
+      "will_merge": {
+        "n": 29,
+        "accuracy": 0.7241,
+        "brier": 0.2487,
+        "ece": 0.2199,
+        "base_rate": 0.2759,
+        "mean_answer_confidence": 0.5042
+      },
+      "review_route": {
+        "n": 29,
+        "accuracy": 0.1379,
+        "macro_f1": 0.1053,
+        "per_class_f1": {
+          "fast_track": 0.2105,
+          "normal": 0.0,
+          "needs_tests": 0.0,
+          "block": 0.2105
+        },
+        "ece": 0.12,
+        "majority_class": "block",
+        "majority_baseline": 0.3103,
+        "mean_answer_confidence": 0.2579
+      },
+      "change_scale": {
+        "n": 29,
+        "mae": 0.9281,
+        "accuracy_argmax": 0.3793,
+        "within_one_level": 0.6897,
+        "ece": 0.1576,
+        "mean_answer_confidence": 0.2217
+      },
+      "latency_ms_p50": 225.5
+    },
+    "models/laya": {
+      "will_merge": {
+        "n": 29,
+        "accuracy": 0.2069,
+        "brier": 0.3665,
+        "ece": 0.4326,
+        "base_rate": 0.2759,
+        "mean_answer_confidence": 0.6395
+      },
+      "review_route": {
+        "n": 29,
+        "accuracy": 0.2069,
+        "macro_f1": 0.1832,
+        "per_class_f1": {
+          "fast_track": 0.125,
+          "normal": 0.3,
+          "needs_tests": 0.3077,
+          "block": 0.0
+        },
+        "ece": 0.1493,
+        "majority_class": "block",
+        "majority_baseline": 0.3103,
+        "mean_answer_confidence": 0.3562
+      },
+      "change_scale": {
+        "n": 29,
+        "mae": 0.9208,
+        "accuracy_argmax": 0.3793,
+        "within_one_level": 0.6897,
+        "ece": 0.1779,
+        "mean_answer_confidence": 0.4909
+      },
+      "latency_ms_p50": 106.6
+    }
+  }
+}

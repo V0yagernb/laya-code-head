@@ -1,0 +1,44 @@
+{
+  "split": "test",
+  "n_cases": 434,
+  "models": {
+    "out/run3/checkpoint_latest": {
+      "will_merge": {
+        "n": 434,
+        "accuracy": 0.5,
+        "auc": 0.5551,
+        "best_threshold": 0.25,
+        "accuracy_at_best_threshold": 0.6244,
+        "brier": 0.2693,
+        "ece": 0.1221,
+        "base_rate": 0.606,
+        "majority_baseline": 0.606,
+        "mean_answer_confidence": 0.6
+      },
+      "review_route": {
+        "n": 434,
+        "accuracy": 0.4954,
+        "macro_f1": 0.2119,
+        "per_class_f1": {
+          "fast_track": 0.0187,
+          "normal": 0.6549,
+          "needs_tests": 0.0,
+          "block": 0.1739
+        },
+        "ece": 0.0611,
+        "majority_class": "normal",
+        "majority_baseline": 0.4954,
+        "mean_answer_confidence": 0.5554
+      },
+      "change_scale": {
+        "n": 434,
+        "mae": 0.7792,
+        "accuracy_argmax": 0.3779,
+        "within_one_level": 0.8664,
+        "ece": 0.087,
+        "mean_answer_confidence": 0.4421
+      },
+      "latency_ms_p50": 155.3
+    }
+  }
+}

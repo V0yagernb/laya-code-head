@@ -1,0 +1,19 @@
+{
+  "ckpt": "out/iso_route/final",
+  "split": "train",
+  "n_items": 5296,
+  "report": {
+    "review_route": {
+      "n": 5296,
+      "macro_f1": 0.39661094736881436,
+      "acc": 0.4104984894259819,
+      "per_class_f1": {
+        "fast_track": 0.3353404353867532,
+        "normal": 0.3166368515205724,
+        "needs_tests": 0.5073025335320417,
+        "block": 0.4271639690358902
+      },
+      "mean_max_prob": 0.29331116741832647
+    }
+  }
+}

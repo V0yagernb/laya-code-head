@@ -1,0 +1,44 @@
+{
+  "split": "test",
+  "n_cases": 434,
+  "models": {
+    "out/run3/final": {
+      "will_merge": {
+        "n": 434,
+        "accuracy": 0.4977,
+        "auc": 0.5245,
+        "best_threshold": 0.2,
+        "accuracy_at_best_threshold": 0.6175,
+        "brier": 0.2808,
+        "ece": 0.1414,
+        "base_rate": 0.606,
+        "majority_baseline": 0.606,
+        "mean_answer_confidence": 0.6391
+      },
+      "review_route": {
+        "n": 434,
+        "accuracy": 0.5092,
+        "macro_f1": 0.2634,
+        "per_class_f1": {
+          "fast_track": 0.129,
+          "normal": 0.6644,
+          "needs_tests": 0.0,
+          "block": 0.2602
+        },
+        "ece": 0.0772,
+        "majority_class": "normal",
+        "majority_baseline": 0.4954,
+        "mean_answer_confidence": 0.498
+      },
+      "change_scale": {
+        "n": 434,
+        "mae": 0.6952,
+        "accuracy_argmax": 0.4424,
+        "within_one_level": 0.9171,
+        "ece": 0.0545,
+        "mean_answer_confidence": 0.4617
+      },
+      "latency_ms_p50": 149.3
+    }
+  }
+}

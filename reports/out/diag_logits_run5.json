@@ -1,0 +1,38 @@
+{
+  "ckpt": "out/run5/final",
+  "split": "dev",
+  "temperatures": {
+    "review_route": 4.261964321136475,
+    "change_scale": 0.7881714701652527,
+    "will_merge": 0.5064954161643982
+  },
+  "tasks": {
+    "change_scale": {
+      "n": 21,
+      "logits_std_mean": 0.7700985145001185,
+      "logits_range_median": 2.36083984375,
+      "max_prob_raw_mean": 0.4002844364870162,
+      "max_prob_calibrated_mean": 0.45131862589291166,
+      "calibrated_range_median": 2.995337724685669,
+      "temperature": 0.7881714701652527
+    },
+    "review_route": {
+      "n": 21,
+      "logits_std_mean": 0.09448216624912761,
+      "logits_range_median": 0.23974609375,
+      "max_prob_raw_mean": 0.281448252144314,
+      "max_prob_calibrated_mean": 0.25721808842250277,
+      "calibrated_range_median": 0.056252479553222656,
+      "temperature": 4.261964321136475
+    },
+    "will_merge": {
+      "n": 21,
+      "logits_std_mean": 0.05989183698381696,
+      "logits_range_median": 0.0751953125,
+      "max_prob_raw_mean": 0.5298058277084714,
+      "max_prob_calibrated_mean": 0.5580758537564959,
+      "calibrated_range_median": 0.14846199750900269,
+      "temperature": 0.5064954161643982
+    }
+  }
+}

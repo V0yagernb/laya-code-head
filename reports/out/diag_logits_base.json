@@ -1,0 +1,38 @@
+{
+  "ckpt": "models/laya",
+  "split": "dev",
+  "temperatures": {
+    "review_route": 1.6369030475616455,
+    "change_scale": 1.2514300346374512,
+    "will_merge": 1.983399510383606
+  },
+  "tasks": {
+    "change_scale": {
+      "n": 21,
+      "logits_std_mean": 1.2536155922072274,
+      "logits_range_median": 3.896484375,
+      "max_prob_raw_mean": 0.5429775360084715,
+      "max_prob_calibrated_mean": 0.47819478313128155,
+      "calibrated_range_median": 3.1136252880096436,
+      "temperature": 1.2514300346374512
+    },
+    "review_route": {
+      "n": 21,
+      "logits_std_mean": 0.5074266613948912,
+      "logits_range_median": 1.11669921875,
+      "max_prob_raw_mean": 0.4286109038761684,
+      "max_prob_calibrated_mean": 0.35838220091093154,
+      "calibrated_range_median": 0.6822024583816528,
+      "temperature": 1.6369030475616455
+    },
+    "will_merge": {
+      "n": 21,
+      "logits_std_mean": 0.778044927687872,
+      "logits_range_median": 1.7115478515625,
+      "max_prob_raw_mean": 0.8131571610768636,
+      "max_prob_calibrated_mean": 0.683972886630467,
+      "calibrated_range_median": 0.8629364967346191,
+      "temperature": 1.983399510383606
+    }
+  }
+}
